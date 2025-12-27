@@ -3,6 +3,7 @@ export default function Button({
   onClick,
   variant = "primary",
   className = "",
+  mt = "mt-4",
 }) {
   const base =
     "px-4 py-2 rounded-md text-sm font-medium transition focus:outline-none";
@@ -16,7 +17,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={`${base} ${variants[variant]} ${className}`}
+      className={`${mt} ${base} ${variants[variant]} ${className}`}
     >
       {children}
     </button>
