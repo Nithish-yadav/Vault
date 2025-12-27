@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StarBorder from "../components/StarBorder";
+import Navbar from "../components/Navbar";
 
 export default function Access() {
   const [code, setCode] = useState("");
@@ -13,10 +14,18 @@ export default function Access() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black text-white selection:bg-cyan-500/30">
-       {/* BACKGROUND - Simple Tech Grid */}
-       <div className="fixed inset-0 z-0 opacity-20">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d4_1px,transparent_1px),linear-gradient(to_bottom,#06b6d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-          <div className="absolute inset-0 bg-radial-gradient(circle_at_center,rgba(6,182,212,0.15),transparent_70%)"></div>
+        <Navbar />
+       {/* BACKGROUND - Animated Perspective Grid */}
+       <div className="fixed inset-0 z-0 bg-black perspective-1000 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d4_1px,transparent_1px),linear-gradient(to_bottom,#06b6d4_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"
+            style={{
+              transformOrigin: 'top',
+              transform: 'rotateX(60deg) scale(2)',
+              animation: 'grid-movement 1s linear infinite'
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
        </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full gap-8">
