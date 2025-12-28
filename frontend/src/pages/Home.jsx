@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-4 glitch-text" style={{ fontFamily: '"Poppins", sans-serif' }}>
+        <h1 className="text-5xl md:text-9xl font-black tracking-tighter mb-4 glitch-text" style={{ fontFamily: '"Poppins", sans-serif' }}>
           VauLT
         </h1>
         <p className="text-lg md:text-xl text-gray-400 max-w-lg mb-10 tracking-wide">
