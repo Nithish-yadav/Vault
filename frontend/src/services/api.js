@@ -1,13 +1,13 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://vault-backend-4v35.onrender.com';
 export const sessionAPI = {
   // Get or create session
   async getSession(code) {
-    const response = await fetch(`${API_URL}/sessions/${code}`);
+    const response = await fetch(`${API_URL}/api/sessions/${code}`);
     return response.json();
   },
   // Save text
   saveText: async (code, text, password = null) => {
-    const response = await fetch(`${API_URL}/sessions/${code}/text`, {
+    const response = await fetch(`${API_URL}/api/sessions/${code}/text`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text, password }),
@@ -17,7 +17,7 @@ export const sessionAPI = {
   },
   // Lock session
   async lockSession(code, password) {
-    const response = await fetch(`${API_URL}/sessions/${code}/lock`, {
+    const response = await fetch(`${API_URL}/api/sessions/${code}/lock`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password })
@@ -26,7 +26,7 @@ export const sessionAPI = {
   },
   // Unlock session
   async unlockSession(code, password) {
-    const response = await fetch(`${API_URL}/sessions/${code}/unlock`, {
+    const response = await fetch(`${API_URL}/api/sessions/${code}/unlock`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password })
@@ -35,7 +35,7 @@ export const sessionAPI = {
   },
   // Delete session
   async deleteSession(code) {
-    const response = await fetch(`${API_URL}/sessions/${code}`, {
+    const response = await fetch(`${API_URL}/api/sessions/${code}`, {
       method: 'DELETE'
     });
     return response.ok;
